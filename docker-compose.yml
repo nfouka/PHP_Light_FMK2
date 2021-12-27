@@ -1,0 +1,21 @@
+version: '3.6'
+
+services:
+
+    php:
+      container_name: php
+      hostname: php
+      build:
+       context: ./
+       dockerfile: Dockerfile
+      ports:
+        - 80:80
+      networks:
+        - php_redis
+      volumes:
+        - ./:/var/www/html
+
+
+networks:
+  php_redis:
+    driver: bridge

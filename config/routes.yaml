@@ -1,0 +1,26 @@
+# -----------------------------------------------------------------
+#                 ROUTING FOR TWIG TEMPLATE
+# -----------------------------------------------------------------
+
+route1:
+  path:       /AcmeController/index
+  controller: Bundles\AcmeBundle\Controller\AcmeController::index
+  methods:    GET
+
+route3:
+  path:       /AppController/index/{year}
+  controller: Bundles\AppBundle\Controller\AppController::index
+  defaults:
+    year: 1
+  requirements:
+    year: '\d+'
+  methods:    GET
+
+
+# -----------------------------------------------------------------
+#                 ROUTING FOR PHP TEMPLATE
+# -----------------------------------------------------------------
+route4:
+  path:       /AppController/php/{max}
+  controller: Bundles\AppBundle\Controller\AppController::php
+  methods:    GET
